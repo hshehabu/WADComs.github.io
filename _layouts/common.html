@@ -13,8 +13,8 @@
             {% endif %}
             {{ site.title }}
         </title>
-        <link rel="icon" href="/assets/logo.png">
-        <link id="pagestyle" rel="stylesheet" href="/assets/style.css" type="text/css"/>
+        <link rel="icon" href="{{site.baseurl}}/assets/logo.png">
+        <link id="pagestyle" rel="stylesheet" href="{{site.baseurl}}/assets/style.css" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
         <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
@@ -26,11 +26,11 @@
             var checkbox = document.querySelector('input[type="checkbox"]');
             checkbox.addEventListener('change', function () {
                 if (checkbox.checked) {
-                    document.getElementById('pagestyle').setAttribute('href','/assets/styleDark.css');
+                    document.getElementById('pagestyle').setAttribute('href','{{site.baseurl}}/assets/styleDark.css');
                     localStorage["style"] = "true";
                 
                 } else {
-                    document.getElementById('pagestyle').setAttribute('href','/assets/style.css');
+                    document.getElementById('pagestyle').setAttribute('href','{{site.baseurl}}/assets/style.css');
                     localStorage["style"] = "false";
                 }
             });

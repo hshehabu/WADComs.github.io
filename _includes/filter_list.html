@@ -3,7 +3,7 @@
     {% assign attack_id = attack_pair[0] %}
     {% assign attack = attack_pair[1] %}
     {% if include.bin.attack_types contains attack_id %}
-    <li><a href="{{ include.bin.url }}#{{ attack_id }}">{{ attack.label }}</a></li>
+    <li><a href="{{site.baseurl}}{{ include.bin.url }}#{{ attack_id }}">{{ attack.label }}</a></li>
     {% endif %}
     {% endfor %}
 
@@ -11,7 +11,7 @@
     {% assign item_id = item_pair[0] %}
     {% assign item = item_pair[1] %}
     {% if include.bin.items contains item_id %}
-    <li><a href="{{ include.bin.url }}#{{ item_id }}">{{ item.label }}</a></li>
+    <li><a href="{{site.baseurl}}{{ include.bin.url }}#{{ item_id }}">{{ item.label }}</a></li>
     {% endif %}
     {% endfor %}
 
@@ -19,7 +19,7 @@
     {% assign service_id = service_pair[0] %}
     {% assign service = service_pair[1] %}
     {% if include.bin.services contains service_id %}
-    <li><a href="{{ include.bin.url }}#{{ service_id }}">{{ service.label }}</a></li>
+    <li><a href="{{site.baseurl}}{{ include.bin.url }}#{{ service_id }}">{{ service.label }}</a></li>
     {% endif %}
     {% endfor %}
 
@@ -27,7 +27,7 @@
     {% assign OS_id = OS_pair[0] %}
     {% assign OS = OS_pair[1] %}
     {% if include.bin.OS contains OS_id %}
-    <li><a href="{{ include.bin.url }}#{{ OS_id }}">{{ OS.label }}</a></li>
+    <li><a href="{{site.baseurl}}{{ include.bin.url }}#{{ OS_id }}">{{ OS.label }}</a></li>
     {% endif %}
     {% endfor %}
 </ul>

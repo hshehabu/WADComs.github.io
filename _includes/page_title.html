@@ -1,6 +1,6 @@
 <h1>
     {% if page.url != '/' %}
-    <a href="/">..</a> /
+    <a href="{{site.baseurl}}/">..</a> /
     {% endif %}
     {{ include.title }}
     <div class="github-buttons">
@@ -11,7 +11,7 @@
         </label>
         <script type="text/javascript">        
             if(localStorage["style"]=="true"){
-                document.getElementById('pagestyle').setAttribute('href','/assets/styleDark.css');
+                document.getElementById('pagestyle').setAttribute('href','{{site.baseurl}}/assets/styleDark.css');
                 document.querySelector('input[type="checkbox"]').checked = true
             }
         </script>

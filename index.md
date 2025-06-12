@@ -3,7 +3,7 @@ layout: page
 title: WADComs
 ---
 
-![logo](/assets/logo.png){:.logo}
+![logo]({{site.baseurl}}/assets/logo.png){:.logo}
 
 WADComs is an interactive cheat sheet, containing a curated list of offensive security tools and their respective commands, to be used against Windows/AD environments.  
 

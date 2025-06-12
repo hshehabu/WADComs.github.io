@@ -56,7 +56,7 @@
 	    {% assign sites = site.wadcoms | reverse %} 
             {% for file in sites %}
             <tr>
-		    <td><div class="bin-name"><div style="flex: 0 0 97%"><a href="{{ file.url }}" id="{{ file.url }}" style="text-decoration: none; color: DarkGreen;">{{ file.command | escape }}</a></div><div style="flex: 1;"><a href="javascript:void(0)" onClick="copyFunction('{{ file.url }}')"><img src="/assets/copy-button.svg" alt="Copy" title="Copy" id="{{ file.url }}_img"/></a></div></div><p style="margin-top: -12px;">{% include filter_list.html bin=file %}</p></td>
+		    <td><div class="bin-name"><div style="flex: 0 0 97%"><a href="{{site.baseurl}}{{ file.url }}" id="{{site.baseurl}}{{ file.url }}" style="text-decoration: none; color: DarkGreen;">{{ file.command | escape | newline_to_br }}</a></div><div style="flex: 1;"><a href="javascript:void(0)" onClick="copyFunction('{{site.baseurl}}{{ file.url }}')"><img src="{{site.baseurl}}/assets/copy-button.svg" alt="Copy" title="Copy" id="{{site.baseurl}}{{ file.url }}_img"/></a></div></div><p style="margin-top: -12px;">{% include filter_list.html bin=file %}</p></td>
             </tr>
             {% endfor %}
         </tbody>
@@ -73,8 +73,8 @@
 
 	 navigator.clipboard.writeText(copyCommand.innerText).then(() => {
 		 {% for file in site.wadcoms %}
-		 document.getElementById("{{ file.url }}_img").alt = "Copy";
-		 document.getElementById("{{ file.url }}_img").title = "Copy";
+		 document.getElementById("{{site.baseurl}}{{ file.url }}_img").alt = "Copy";
+		 document.getElementById("{{site.baseurl}}{{ file.url }}_img").title = "Copy";
 		 {% endfor %}
 		 document.getElementById(file_url + "_img").alt = "Copied";
 		 document.getElementById(file_url + "_img").title = "Copied";
